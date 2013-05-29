@@ -7,6 +7,16 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'pry'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
