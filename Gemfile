@@ -17,6 +17,9 @@ group :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem 'growl'
 end
 
 # Gems used only for assets and not required
