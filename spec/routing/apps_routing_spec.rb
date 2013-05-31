@@ -1,7 +1,12 @@
 require "spec_helper"
+include Warden::Test::Helpers
+
+Warden.test_mode!
 
 describe AppsController do
+  let(:user) { FactoryGirl.create(:user) }
   describe "routing" do
+    before(:each) { login_as(user, scope: :user) }
 
     it "routes to #index" do
       get("/apps").should route_to("apps#index")
