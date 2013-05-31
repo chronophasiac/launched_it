@@ -9,9 +9,11 @@ gem 'pg'
 gem 'devise'
 gem 'zurb-foundation'
 gem 'simple_form'
+gem 'validate_url'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'spork-rails'
   gem 'pry'
 end
 
