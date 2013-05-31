@@ -17,9 +17,15 @@
       </ul>
       <ul class='right'>
         <li class="divider"></li>
+      <%- if user_signed_in? -%>
+        <li id="logout">
+        <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+        </li>
+      <%- else -%>
         <li><%= link_to "Sign in", new_user_session_path %></li>
         <li class="divider"></li>
         <li class="has-form"><%= link_to "Sign up", new_user_registration_path, :class => 'button' %></li>
+      <%- end -%>
       </ul>
     </section>
   </nav>

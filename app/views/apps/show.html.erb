@@ -1,4 +1,20 @@
 <p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>URL</th>
+    <th>Codebase URL</th>
+    <th>Contact Email</th>
+  </tr>
+  <tr>
+    <td><%= @app.name %></td>
+    <td><%= @app.description %></td>
+    <td><%= @app.url %></td>
+    <td><%= @app.codebase_url %></td>
+    <td><%= @app.user.email if @app.email_visible %></td>
+  </tr>
+</table>
 
 
 <%= link_to 'Edit', edit_app_path(@app) %> |

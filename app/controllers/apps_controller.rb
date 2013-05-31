@@ -1,5 +1,6 @@
 class AppsController < ApplicationController
   before_filter :authenticate_user!
+  around_filter :catch_not_found
   # GET /apps
   # GET /apps.json
   def index
@@ -81,4 +82,14 @@ class AppsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def catch_not_found
+    yield
+    rescue ActiveRecord::RecordNotFound
+      redirect_to apps_url, flash: { alert: "Application Not Found" }
+  end
 end
+
+      

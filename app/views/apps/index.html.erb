@@ -2,13 +2,17 @@
 
 <table>
   <tr>
+    <th>Name</th>
+    <th>URL</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @apps.each do |app| %>
-  <tr>
+  <tr class="app-row">
+    <td><%= app.name %></td>
+    <td><%= app.url %></td>
     <td><%= link_to 'Show', app %></td>
     <td><%= link_to 'Edit', edit_app_path(app) %></td>
     <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
