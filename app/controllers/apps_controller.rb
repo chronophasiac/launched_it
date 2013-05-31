@@ -25,7 +25,7 @@ class AppsController < ApplicationController
   # GET /apps/new
   # GET /apps/new.json
   def new
-    @app = App.new
+    @app = current_user.apps.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +41,7 @@ class AppsController < ApplicationController
   # POST /apps
   # POST /apps.json
   def create
-    @app = App.new(params[:app])
+    @app = current_user.apps.new(params[:app])
 
     respond_to do |format|
       if @app.save

@@ -15,6 +15,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spork-rails'
   gem 'pry'
+  gem 'launchy'
 end
 
 group :test do

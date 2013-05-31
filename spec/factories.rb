@@ -7,6 +7,7 @@ FactoryGirl.define do
   end
 
   factory :app do
+    user
     name          "test app"
     url           "http://testapp.com"
     codebase_url  "http://github.com/testapp"

@@ -31,12 +31,6 @@ describe App do
     expect(invalid_app).to_not be_valid
   end
 
-  it "is has a default value 'false' for email_visible" do
-    no_email_visible = App.new(name:"foo",description:"blah",url:"http://www.foo.com",codebase_url:"http://www.foo.com")
-    no_email_visible.save!
-    expect(no_email_visible.reload.email_visible).to eql(false)
-  end
-
   it "is not valid with an invalid URL" do
     invalid_app = app.dup
     invalid_app.url = "invalid"
@@ -46,6 +40,12 @@ describe App do
   it "is not valid with an invalid codebase URL" do
     invalid_app = app.dup
     invalid_app.codebase_url = "invalid"
+    expect(invalid_app).to_not be_valid
+  end
+
+  it "is not valid without a user" do
+    invalid_app = app.dup
+    invalid_app.user = nil
     expect(invalid_app).to_not be_valid
   end
 
