@@ -1,17 +1,11 @@
-<%= form_for(@app) do |f| %>
-  <% if @app.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@app.errors.count, "error") %> prohibited this app from being saved:</h2>
+<%= simple_form_for @app  do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name, label: 'Application Name' %>
+  <%= f.input :description, input_html: { cols: 60, rows: 3 } %>
+  <%= f.input :url, label: 'URL' %>
+  <%= f.input :codebase_url, label: 'Codebase URL' %>
+  <%= f.input :email_visible, label: 'Display my email on the app page' %>
 
-      <ul>
-      <% @app.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%= f.button :submit %>
+  <small>* Indicates required field</small>
+<%- end -%>

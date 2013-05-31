@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'devise'
 gem 'zurb-foundation'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails'

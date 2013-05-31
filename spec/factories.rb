@@ -11,6 +11,7 @@ FactoryGirl.define do
     url           "http://testapp.com"
     codebase_url  "http://github.com/testapp"
     description   "testing the description"
+    email_visible true
   end
 
 end
