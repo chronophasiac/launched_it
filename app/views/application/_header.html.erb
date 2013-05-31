@@ -1,0 +1,25 @@
+
+  <nav class='top-bar'>
+    <ul class='title-area'>
+      <li class='name'>
+        <h1><%= link_to 'Launched It', '/' %></h1>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="left">
+        <li class="divider"></li>
+        <li><%= link_to "Submit an app", new_app_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Browse apps", apps_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to "What are we?", about_path %></li>
+        <li class="divider"></li>
+      </ul>
+      <ul class='right'>
+        <li class="divider"></li>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
+        <li class="divider"></li>
+        <li class="has-form"><%= link_to "Sign up", new_user_registration_path, :class => 'button' %></li>
+      </ul>
+    </section>
+  </nav>

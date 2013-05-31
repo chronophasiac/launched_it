@@ -3,7 +3,8 @@ LaunchedIt::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "main_pages#home" 
+  root :to => "main_pages#home"
+  match '/about' => "main_pages#about"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
