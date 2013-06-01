@@ -9,6 +9,9 @@ class App < ActiveRecord::Base
   belongs_to  :user,
               inverse_of: :apps
 
+  has_many :comments,
+            inverse_of: :app
+
   validates :codebase_url, url: true
   validates :url, url: true
 

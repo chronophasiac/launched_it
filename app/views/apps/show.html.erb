@@ -16,6 +16,13 @@
   </tr>
 </table>
 
+<%= render 'comment_form' %>
+
+<% @app.comments.each do |comment| %>
+  <p><%= comment.first_name %> <%= comment.last_name %></p>
+  <p><%= comment.email %></p>
+  <p><%= comment.body %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>
