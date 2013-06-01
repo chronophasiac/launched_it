@@ -18,7 +18,7 @@
 
 <%= render 'comment_form' %>
 
-<% @app.comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <p><%= comment.first_name %> <%= comment.last_name %></p>
   <p><%= comment.email %></p>
   <p><%= comment.body %></p>
