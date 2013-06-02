@@ -16,6 +16,7 @@ group :development, :test do
   gem 'spork-rails'
   gem 'pry'
   gem 'launchy'
+  gem 'annotate'
 end
 
 group :test do

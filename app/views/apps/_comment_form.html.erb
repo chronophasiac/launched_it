@@ -1,6 +1,9 @@
-<%= simple_form_for @comments  do |f| %>
+<%= simple_form_for @new_comment  do |f| %>
   <%= f.error_notification %>
   <%= f.input :first_name, label: 'First Name' %>
+  <%= f.input :last_name, label: 'Last Name' %>
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :body, label: 'Comment' %>
 
   <%= f.button :submit %>
   <small>* Indicates required field</small>

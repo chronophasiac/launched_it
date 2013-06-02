@@ -18,11 +18,15 @@
 
 <%= render 'comment_form' %>
 
-<% @comments.each do |comment| %>
-  <p><%= comment.first_name %> <%= comment.last_name %></p>
-  <p><%= comment.email %></p>
-  <p><%= comment.body %></p>
+<% if @comments %>
+  <% @comments.each do |comment| %>
+    <p><%= comment.first_name %> <%= comment.last_name %></p>
+    <p><%= comment.email %></p>
+    <p><%= comment.body %></p>
+  <% end %>
 <% end %>
 
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+<% if current_user.id == @app.id %>
+  <%= link_to 'Edit', edit_app_path(@app) %> |
+  <%= link_to 'Back', apps_path %>
+<% end %>

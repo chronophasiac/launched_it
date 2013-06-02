@@ -17,6 +17,7 @@ class AppsController < ApplicationController
   def show
     @app = App.find(params[:id])
     @comments = @app.comments
+    @new_comment = current_user.comments.new
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: apps
+#
+#  id            :integer          not null, primary key
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  name          :string(255)      not null
+#  url           :string(255)      not null
+#  codebase_url  :string(255)      not null
+#  description   :text             not null
+#  email_visible :boolean          default(FALSE), not null
+#  user_id       :integer          not null
+#
+
 require 'spec_helper'
 
 describe App do
