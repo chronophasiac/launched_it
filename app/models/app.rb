@@ -28,6 +28,11 @@ class App < ActiveRecord::Base
             inverse_of: :app,
             dependent: :destroy
 
+  has_many :comments, {
+          dependent: :destroy,
+          inverse_of: :app
+  }
+
   validates :codebase_url, url: true
   validates :url, url: true
 

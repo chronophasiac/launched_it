@@ -24,12 +24,20 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many  :apps,
+  has_many  :apps, {
             dependent: :destroy,
             inverse_of: :user
+  }
+
+  has_many :comments, {
+            dependent: :destroy,
+            inverse_of: :user
+
   has_many :comments,
             dependent: :destroy,
             inverse_of: :user
+
+  }
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body

@@ -18,4 +18,13 @@ class Comment < ActiveRecord::Base
   validates :body, :first_name, :last_name, :user_id, :app_id, presence: true
   belongs_to :user, inverse_of: :comments
   belongs_to :app, inverse_of: :comments
+  attr_accessible :body
+  belongs_to :user, {
+    inverse_of: :comments
+  }
+  belongs_to :app, {
+    inverse_of: :comments
+  }
+
+  validates :user_id, :app_id, :user, :app, :body, presence: true
 end
