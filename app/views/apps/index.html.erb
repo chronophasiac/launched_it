@@ -13,8 +13,8 @@
   <tr class="app-row">
     <td><%= app.name %></td>
     <td><%= app.url %></td>
+    <td><%= link_to 'Show', app %></td>
     <% if current_user.apps.include?(app) %>
-      <td><%= link_to 'Show', app %></td>
       <td><%= link_to 'Edit', edit_app_path(app) %></td>
       <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
