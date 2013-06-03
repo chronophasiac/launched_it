@@ -1,0 +1,19 @@
+<%= simple_form_for @new_comment  do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :first_name, label: 'First Name' %>
+  <%= f.input :last_name, label: 'Last Name' %>
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :body, label: 'Comment' %>
+
+  <%= f.button :submit %>
+  <small>* Indicates required field</small>
+<%- end -%>
+
+
+<!-- <form method="post" action="">
+  <input type="text" name="comment[first_name]" id="first_name" placeholder="First Name">
+  <input type="text" name="comment[last_name]" id="last_name" placeholder="Last Name">
+  <input type="text" name="comment[email]" id="last_name" value="<%= current_user.email %>" readonly>
+  <textarea name="comment[body]" style="resize:none; height:200px;" placeholder="Put a comment up in this bitch"></textarea>
+</form>
+ -->

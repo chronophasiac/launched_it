@@ -1,5 +1,6 @@
 LaunchedIt::Application.routes.draw do
   resources :apps
+  resources :comments
 
   devise_for :users
 
