@@ -21,17 +21,20 @@
   </head>
 
   <body>
-<%= render 'header' %>
+
+    <div class='whole-page'>
+      <%= render 'header' %>
 
 
-    <div class='row'>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <div class='row sticky-footer-fix'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+      <%= yield %>
+      </div>
+
+      <%= render 'footer' %>
     </div>
-
-<%= render 'footer' %>
 
     <%= javascript_include_tag "application" %>
   </body>
