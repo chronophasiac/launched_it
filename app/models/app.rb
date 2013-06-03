@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: apps
+#
+#  id            :integer          not null, primary key
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  name          :string(255)      not null
+#  url           :string(255)      not null
+#  codebase_url  :string(255)      not null
+#  description   :text             not null
+#  email_visible :boolean          default(FALSE), not null
+#  user_id       :integer          not null
+#
+
 class App < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :description
@@ -8,6 +23,11 @@ class App < ActiveRecord::Base
 
   belongs_to  :user,
               inverse_of: :apps
+
+  has_many :comments, {
+          dependent: :destroy,
+          inverse_of: :app
+  }
 
   validates :codebase_url, url: true
   validates :url, url: true
