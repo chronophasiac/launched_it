@@ -10,8 +10,8 @@ feature %Q{As a user
   given(:user) { FactoryGirl.create(:user) }
   background do 
     login_as(user, scope: :user)
-    FactoryGirl.create(:app, name: "First app")
-    FactoryGirl.create(:app, name: "Second app")
+    FactoryGirl.create(:app, name: "First app", user: user)
+    FactoryGirl.create(:app, name: "Second app", user: user)
     visit apps_path
   end
 
