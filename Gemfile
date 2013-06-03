@@ -10,12 +10,14 @@ gem 'devise'
 gem 'zurb-foundation'
 gem 'simple_form'
 gem 'validate_url'
+gem 'annotate'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'spork-rails'
   gem 'pry'
   gem 'launchy'
+  gem 'annotate'
 end
 
 group :test do
