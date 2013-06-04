@@ -10,6 +10,7 @@ gem 'devise'
 gem 'zurb-foundation'
 gem 'simple_form'
 gem 'validate_url'
+gem 'annotate'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -55,3 +56,4 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
