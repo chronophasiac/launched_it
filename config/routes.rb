@@ -1,5 +1,7 @@
 LaunchedIt::Application.routes.draw do
-  resources :apps
+  resources :apps do
+    resources :comments
+  end
 
   devise_for :users
 
