@@ -1,8 +1,15 @@
+require 'application_helper'
+
 class CommentsController < ApplicationController
+  before_filter :get_app
+
+  def get_app
+    @app = App.find(params[:id])
+  end
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = @app.comments
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +20,7 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
-    @comment = Comment.find(params[:id])
+    @comment = @app.comments.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,7 +42,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
-    @comment = Comment.find(params[:id])
+    @comment = @app.comments.find(params[:id])
   end
 
   # POST /comments
