@@ -1,11 +1,6 @@
-require 'application_helper'
-
 class CommentsController < ApplicationController
   before_filter :get_app
 
-  def get_app
-    @app = App.find(params[:id])
-  end
   # GET /comments
   # GET /comments.json
   def index
@@ -89,5 +84,9 @@ class CommentsController < ApplicationController
       format.html { redirect_to comments_url }
       format.json { head :no_content }
     end
+  end
+
+  def get_app
+    @app = App.find(params[:id])
   end
 end
