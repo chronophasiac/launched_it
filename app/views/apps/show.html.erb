@@ -25,6 +25,7 @@
 <% else %>
   <p>No comments yet.</p>
 <% end %>
+<%= link_to "Give Props (#{@props.length} #{"prop".pluralize(@props.length)})", new_app_prop_path(@app) %> |
 <%= link_to "Comment", new_app_comment_path(@app) %> |
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>

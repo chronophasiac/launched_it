@@ -29,6 +29,11 @@ class App < ActiveRecord::Base
           inverse_of: :app
   }
 
+  has_many :props, {
+          dependent: :destroy,
+          inverse_of: :app
+  }
+
   validates :codebase_url, url: true
   validates :url, url: true
 

@@ -87,6 +87,6 @@ class CommentsController < ApplicationController
   end
 
   def get_app
-    @app = App.find(params[:id])
+    @app = App.find(params[:app_id])
   end
 end

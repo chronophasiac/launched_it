@@ -22,4 +22,9 @@ FactoryGirl.define do
     app
   end
 
+  factory :prop do
+    app
+    user
+  end
+
 end
