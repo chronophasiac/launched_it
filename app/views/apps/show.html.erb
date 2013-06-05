@@ -19,7 +19,7 @@
 <%= link_to "Comment", new_app_comment_path(@app) %> |
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>
-
+<br><br>
 <% if @comments.length > 0 %>
   <% @comments.each do |comment| %>
   <div class="comment">
