@@ -38,4 +38,8 @@ class App < ActiveRecord::Base
   validates :url, url: true
 
   attr_accessible :name, :description, :url, :codebase_url, :email_visible
+
+  def current_user_gave_props?(user)
+    self.props.where(user_id: user.id).present?
+  end
 end

@@ -15,9 +15,15 @@
   </tr>
 </table>
 
-<%= link_to "Give Props (#{@props.length} #{"prop".pluralize(@props.length)})", new_app_prop_path(@app) %> |
+<% if @app.current_user_gave_props?(current_user) %>
+<%= link_to "Props (#{@props.length} #{"prop".pluralize(@props.length)})", app_prop_path(@app), method: :delete %> |
+<% else %>
+<%= link_to "Props (#{@props.length} #{"prop".pluralize(@props.length)})", app_props_path(@app), method: :post %> |
+<% end %>
 <%= link_to "Comment", new_app_comment_path(@app) %> |
+<% if @app.user == current_user %>
 <%= link_to 'Edit', edit_app_path(@app) %> |
+<% end %>
 <%= link_to 'Back', apps_path %>
 <br><br>
 <% if @comments.length > 0 %>
