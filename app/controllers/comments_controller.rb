@@ -61,7 +61,7 @@ class CommentsController < ApplicationController
   # PUT /comments/1
   # PUT /comments/1.json
   def update
-    @comment = Comment.find(params[:id])
+    @comment = current_user.comments.find(params[:id])
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
@@ -77,7 +77,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = current_user.comments.find(params[:id])
     @comment.destroy
 
     respond_to do |format|

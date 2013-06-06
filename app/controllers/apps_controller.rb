@@ -37,7 +37,7 @@ class AppsController < ApplicationController
 
   # GET /apps/1/edit
   def edit
-    @app = App.find(params[:id])
+    @app = current_user.apps.find(params[:id])
   end
 
   # POST /apps
@@ -59,7 +59,7 @@ class AppsController < ApplicationController
   # PUT /apps/1
   # PUT /apps/1.json
   def update
-    @app = App.find(params[:id])
+    @app = current_user.apps.find(params[:id])
 
     respond_to do |format|
       if @app.update_attributes(params[:app])
@@ -75,7 +75,7 @@ class AppsController < ApplicationController
   # DELETE /apps/1
   # DELETE /apps/1.json
   def destroy
-    @app = App.find(params[:id])
+    @app = current_user.apps.find(params[:id])
     @app.destroy
 
     respond_to do |format|
