@@ -1,9 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <%= @comment.body %>
-</p>
-
+ <table class="table table-striped">
+    <tr>
+      <td>
+        <strong><%= comment.user.full_name %></strong>
+        <br><br>
+        <%= comment.user.email %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= comment.body %>
+      </td>
+    </tr>
+  </table>
 
 <%= link_to 'Edit', edit_app_comment_path(@comment) %> |
 <%= link_to 'Back', app_comments_path %>
