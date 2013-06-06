@@ -39,6 +39,13 @@ class User < ActiveRecord::Base
             inverse_of: :user
   }
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
   # attr_accessible :title, :body
+
+  validates_presence_of :first_name, :last_name
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
 end

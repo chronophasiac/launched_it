@@ -4,6 +4,8 @@ FactoryGirl.define do
     sequence(:email)      { |n| "email#{n}@launchedit.com" }
     password              "foobar123"
     password_confirmation "foobar123"
+    first_name            "timmy"
+    last_name             "tables"
   end
 
   factory :app do
