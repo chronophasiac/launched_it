@@ -18,7 +18,6 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
     @comments = @app.comments
     @props = @app.props
-    @prop = @app.props.build
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @app }

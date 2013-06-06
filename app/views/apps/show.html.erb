@@ -16,9 +16,9 @@
 </table>
 
 <% if @app.current_user_gave_props?(current_user) %>
-<%= link_to "Props (#{@props.length} #{"prop".pluralize(@props.length)})", app_prop_path(@app), method: :delete %> |
+<%= link_to "Unprop (#{@props.length} #{"prop".pluralize(@props.length)})", app_prop_path(@app), method: :delete %> |
 <% else %>
-<%= link_to "Props (#{@props.length} #{"prop".pluralize(@props.length)})", app_props_path(@app), method: :post %> |
+<%= link_to "Give Props (#{@props.length} #{"prop".pluralize(@props.length)})", app_props_path(@app), method: :post %> |
 <% end %>
 <%= link_to "Comment", new_app_comment_path(@app) %> |
 <% if @app.user == current_user %>
