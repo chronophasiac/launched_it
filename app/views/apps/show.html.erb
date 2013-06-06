@@ -29,7 +29,10 @@
 <% if @comments.length > 0 %>
   <% @comments.each do |comment| %>
   <div class="comment">
-    <p class="comment-head"><%= comment.user.email %></p>
+    <p class="comment-head">
+      <strong><%= comment.user.full_name %></strong><br>
+      <%= comment.user.email %>
+    </p>
     <p class="comment-body"><%= comment.body %></p>
   </div>
   <% end %>
