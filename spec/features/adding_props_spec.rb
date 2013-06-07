@@ -21,9 +21,9 @@ So that I can applaud the efforts of its author}, "adding props" do
   end
 
   scenario "a user has already given ze props" do
-    click_link("Props")
+    click_link("Give Props")
     expect(page).to have_content("1 prop")
-    click_link("Props")
+    click_link("Unprop")
     expect(page).to have_content("0 props")
   end
 end

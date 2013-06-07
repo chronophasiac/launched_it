@@ -9,16 +9,16 @@
   <tr>
     <td><%= @app.name %></td>
     <td><%= @app.description %></td>
-    <td><%= @app.url %></td>
-    <td><%= @app.codebase_url %></td>
+    <td><%= link_to(@app.url, @app.url, target: "_blank") %></td>
+    <td><%= link_to(@app.codebase_url, @app.codebase_url, target: "_blank") %></td>
     <td><%= @app.user.email if @app.email_visible %></td>
   </tr>
 </table>
 
 <% if @app.current_user_gave_props?(current_user) %>
-<%= link_to "Unprop (#{@props.length} #{"prop".pluralize(@props.length)})", app_prop_path(@app), method: :delete %> |
+<%= link_to "Unprop ", app_prop_path(@app), method: :delete %> <%= "(#{@props.length} #{'prop'.pluralize(@props.length)})" %> |
 <% else %>
-<%= link_to "Give Props (#{@props.length} #{"prop".pluralize(@props.length)})", app_props_path(@app), method: :post %> |
+<%= link_to "Give Props ", app_props_path(@app), method: :post %> <%= "(#{@props.length} #{'prop'.pluralize(@props.length)})" %> |
 <% end %>
 <%= link_to "Comment", new_app_comment_path(@app) %> |
 <% if @app.user == current_user %>

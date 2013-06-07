@@ -23,13 +23,13 @@ feature %Q{As a user
 
   # I can view an individual application that has been submitted.
   scenario "each app has a link to show the description" do
-    first('.app-row').click_link "Show"
+    first('.app-row').click_link "First app"
     expect(page).to have_content("testing the description")
   end
 
   # It should show all of the attributes a user can specify when sharing their application.
   scenario "each app has a link to show the user's email if they've chosen to display it" do
-    first('.app-row').click_link "Show"
+    first('.app-row').click_link "First app"
     expect(page).to have_content("@launchedit.com")
   end
 
